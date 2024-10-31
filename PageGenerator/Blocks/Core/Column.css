@@ -1,0 +1,22 @@
+.rnColumn{
+    padding: 10px;
+    flex-direction: column;
+    display: inline-flex;
+    width: 100%;
+    box-sizing: border-box;
+    align-self: start;
+}
+
+.rnBlock{
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .rnColumn{
+        width:100% !important;
+    }
+}
+
+.rnColumn p:last-child{
+    margin-bottom: 0;
+}

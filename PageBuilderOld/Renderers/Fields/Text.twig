@@ -1,0 +1,4 @@
+{# @var FieldSettings \rnpagebuilder\core\Integration\Processors\Settings\Forms\Fields\TextFieldSettings #}
+<div class="inputContainer renderer{{ FieldSettings.RendererType }}" >
+    <input style="width:100%" type="text" readonly="true" value="{{ FieldSettings.ParseStringValue(Value) }}"/>
+</div>

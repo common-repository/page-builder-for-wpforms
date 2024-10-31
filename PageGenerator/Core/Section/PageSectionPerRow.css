@@ -1,0 +1,14 @@
+.Section:not(.MultipleColumnsSection) .SectionPerRow:not(:first-child){
+    margin-top: 20px;
+}
+
+.MultipleColumnsSection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.MultipleColumnsSection .SectionPerRow{
+    padding: 10px;
+}
+

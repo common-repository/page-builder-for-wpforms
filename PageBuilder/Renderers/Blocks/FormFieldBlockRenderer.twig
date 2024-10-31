@@ -1,0 +1,15 @@
+{# @var Model \rnpagebuilder\PageBuilder\Renderers\Blocks\FormFieldBockRenderer #}
+
+<div class="position{{ Model.Options.LabelPosition }}">
+    {% if Model.GetLabel()!='' %}
+        <label class="rnBlockLabel">{{ Model.GetLabel() }}</label>
+    {% endif %}
+
+    {% if Model.Options.FieldStyle=='similar' %}
+        {{ Model.GetValue() }}
+    {% else %}
+        <div>
+            {{ Model.GetValue() }}
+        </div>
+    {% endif %}
+</div>

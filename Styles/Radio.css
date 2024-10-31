@@ -1,0 +1,55 @@
+
+.rednao  input[type='text'], .rednao  select,.rednao  input[type='number'] {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.rednao input[type=checkbox] {
+    outline: none !important;
+}
+
+.rednao input[type=text], .rednao input[type=number], .rednao input[type=email],.rednao select {
+    display: block;
+    height: 33.5px;
+    padding: 5.25px 10.5px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 3.5px;
+    box-shadow: 0 0 transparent;
+    transition: border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out !important;
+    padding: 6px 12px;
+    margin:0;
+}
+
+.rednao input[type=text]:focus, .rednao input[type=number]:focus, .rednao input[type=email]:focus,.rednao select:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    border-top-color: #80bdff;
+    border-right-color: #80bdff;
+    border-bottom-color: #80bdff;
+    border-left-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 2.8px rgba(0, 123, 255, 0.25);
+}
+
+.rednao input[type=text]:disabled, .rednao input[type=text]:read-only, .rednao input[type=number]:disabled, .rednao input[type=number]:read-only, .rednao input[type=email]:disabled, .rednao input[type=email]:read-only {
+    background-color: #e9ecef;
+    opacity: 1;
+}
+
+ul.rnradio{
+    margin:0;
+    padding: 0;
+}
+
+.rnradio li{
+    list-style: none;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}

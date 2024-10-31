@@ -1,0 +1,26 @@
+.TextWithFields p:last-child{
+    margin-bottom: 0;
+}
+
+.PageGenerator  h1,
+.PageGenerator  h2,
+.PageGenerator  h3,
+.PageGenerator  h4,
+.PageGenerator  h5,
+.PageGenerator  h6{
+    margin: 0;
+}
+
+
+.PageGenerator svg{
+    fill: currentColor;
+    height: 1em;
+    line-height: 1em;
+}
+
+.PageGenerator {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}

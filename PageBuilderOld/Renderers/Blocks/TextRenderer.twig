@@ -1,0 +1,11 @@
+{# @var Model \rnpagebuilder\PageBuilder\Renderers\Blocks\TextRenderer #}
+
+<div>
+    {% if Model.GetLabel()!='' %}
+        <label class="rnBlockLabel">{{ Model.GetLabel() }}</label>
+    {% endif %}
+
+    <div>
+        {{ Model.GetValue }}
+    </div>
+</div>

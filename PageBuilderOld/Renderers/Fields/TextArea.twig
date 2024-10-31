@@ -1,0 +1,6 @@
+{# @var FieldSettings \rnpagebuilder\core\Integration\Processors\Settings\Forms\Fields\TextFieldSettings #}
+<div class="inputContainer renderer{{ FieldSettings.RendererType }}" >
+    <textarea readonly="true">
+        {{ FieldSettings.ParseStringValue(Value) }}
+    </textarea>
+</div>

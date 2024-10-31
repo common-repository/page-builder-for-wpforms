@@ -1,0 +1,7 @@
+.PageGenerator .rnSearchBar input,.PageGenerator .rnSearchBar select{
+    box-sizing: border-box;
+    height: 2em;
+    padding: 5px 3px;
+    appearance: auto;
+    background-image: none;
+}

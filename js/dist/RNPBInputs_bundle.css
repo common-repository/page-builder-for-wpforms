@@ -1,0 +1,17 @@
+rn-inputs-select .ts-input{
+    padding-left: 13px !important;
+}
+
+.ts-dropdown-content .spinner{
+    visibility: visible;
+    margin:0;
+    float:left;
+    background: none;
+}
+.flatpickr-calendar{
+    z-index: 1000000000000000 !important;
+}
+
+.rednao input.datePickerInput[type=text]:not(:disabled){
+    background-color: white;
+}

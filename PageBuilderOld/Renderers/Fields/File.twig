@@ -1,0 +1,12 @@
+{# @var FieldSettings \rnpagebuilder\core\Integration\Processors\Settings\Forms\Fields\FileUploadFieldSettings #}
+<div class="inputContainer renderer{{ FieldSettings.RendererType }}" >
+    {% for currentFile in FieldSettings.GetFiles(Value) %}
+        {% if currentFile.Mime starts with 'image/' %}
+            <a target="_blank" href="{{ currentFile.URL }}"><img src="{{ currentFile.URL }}"/></a>
+        {% else %}
+            <a target="_blank" href="{{ currentFile.URL }}">{{ currentFile.Name }}</a>
+        {% endif %}
+    {% endfor %}
+</div>
+
+

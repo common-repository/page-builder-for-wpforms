@@ -1,0 +1,12 @@
+{# @var Model \rnpagebuilder\PageGenerator\Blocks\Core\BlockBase #}
+{{ AddStyle('BlockBase','PageGenerator/Blocks/Core/BlockBase.css') }}
+    {% if Model.Options.Styles!='' %}
+        <style>
+            {{ Model.Options.Styles }}
+        </style>
+    {% endif %}
+    <div class="rnBlock Block_{{ Model.Options.Id }} rn{{ Model.Options.Type }} {{ Model.GetAdditionalClasses() }}" >
+        {% block content %}
+        {% endblock %}
+    </div>
+

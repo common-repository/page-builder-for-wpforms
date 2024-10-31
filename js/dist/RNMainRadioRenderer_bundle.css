@@ -1,0 +1,14 @@
+.rendererRadio li {
+  margin-bottom: 10px;
+  list-style: none; }
+
+.rendererRadio ul {
+  margin: 0;
+  padding: 0; }
+
+.rendererRadio li label {
+  margin: 0 0 0 4px;
+  padding: 0; }
+
+.rendererRadio.readonly input {
+  background-color: #fcfcfc !important; }

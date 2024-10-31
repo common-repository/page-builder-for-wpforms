@@ -1,0 +1,12 @@
+
+ul.rncheckbox{
+    margin:0;
+    padding: 0;
+}
+
+.rncheckbox li{
+    list-style: none;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}

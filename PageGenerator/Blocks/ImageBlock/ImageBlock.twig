@@ -1,0 +1,10 @@
+{% extends "PageGenerator/Blocks/Core/BlockBase.twig" %}
+{# @var Model \rnpagebuilder\PageGenerator\Blocks\ImageBlock\ImageBlock #}
+{% block content %}
+    {{ AddStyle('ImageBlock','PageGenerator/Blocks/ImageBlock/ImageBlock.css') }}
+    {% if Model.GetURL!='' %}
+        <div class="imageContainer">
+            <img src="{{ Model.GetURL }}"/>
+        </div>
+    {% endif %}
+{% endblock %}

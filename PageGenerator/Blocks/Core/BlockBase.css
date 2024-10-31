@@ -1,0 +1,20 @@
+.rnColumn .rnBlock:not(:first-child)
+{
+    margin-top: 5px;
+}
+
+
+.rnBlock p{
+    margin:0;
+
+}
+
+.rnBlock:not(:first-child)
+{
+    margin-top: 3px;
+}
+
+.rnBlock:not(:last-child)
+{
+    margin-bottom: 5px;
+}

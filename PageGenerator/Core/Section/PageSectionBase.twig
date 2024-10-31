@@ -1,0 +1,7 @@
+{# @var Model \rnpagebuilder\PageGenerator\Core\Section\PageSectionBase #}
+{{ AddStyle('PageSection','PageGenerator/Core/Section/PageSectionBase.css') }}
+<div class="Section Section_{{ Model.Options.Id }}">
+    {% for row in Model.Rows %}
+        {{ row.Render }}
+    {% endfor %}
+</div>

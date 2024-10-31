@@ -1,0 +1,33 @@
+{# @var Model \rnpagebuilder\PageGenerator\Core\PageGenerator #}
+{{ AddStyle('PageGenerator','PageGenerator/Core/PageGenerator.css') }}
+
+{% if not Model.IsEditingForm %}
+    <form style="max-width: {{ Model.GetMaxWidth }};margin:auto;" method="post" data-id="{{ Model.InternalId }}" class="PageGenerator {{ Model.Options.Type  }}">
+        {{ Model.MaybeShowNotifications }}
+        {{ Model.RenderArea }}
+
+        {% for currentPostItem in Model.PostItems %}
+            <input type="hidden" name="PostItems[{{ currentPostItem.Name }}]" value="{{ currentPostItem.Serialize }}"/>
+        {% endfor %}
+
+    </form>
+
+    <script>
+        function rnSubmit(e,parameters)
+        {
+            e.preventDefault();
+            let pageGenerator=e.target.closest('.PageGenerator').PageGenerator;
+            pageGenerator.Submit(parameters);
+        }
+    </script>
+{% else %}
+    <div style="max-width: {{ Model.GetMaxWidth }};margin:auto;" data-id="{{ Model.InternalId }}" class="PageGenerator {{ Model.Options.Type  }}">
+        {{ Model.RenderArea }}
+
+        {% for currentPostItem in Model.PostItems %}
+            <input type="hidden" name="PostItems[{{ currentPostItem.Name }}]" value="{{ currentPostItem.Serialize }}"/>
+        {% endfor %}
+
+    </div>
+{% endif %}
+

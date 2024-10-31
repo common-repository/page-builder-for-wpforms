@@ -1,0 +1,29 @@
+.rnblock.Grid .rnDisabled{
+    color:#999;
+}
+
+.rnblock.Grid{
+    margin-bottom: 10px;
+}
+
+.pbGrid-striped tbody tr:nth-of-type(even) {
+    background-color: #eee;
+}
+
+.pbGrid{
+    border-collapse: collapse;
+}
+
+.pbGrid td,.pbGrid th{
+    border:1px solid black;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.pbGrid img {
+    max-height: 200px;
+    max-width: 200px;
+    margin: auto;
+    display: block;
+    text-align: center;
+}

@@ -1,0 +1,7 @@
+{# @var Model \rnpagebuilder\PageGenerator\Sections\GridSection\Columns\CustomColumn #}
+{{ AddStyle('fieldcolumn','PageGenerator/Sections/GridSection/Columns/FieldColumn.css') }}
+{% block content %}
+    {% for row in Model.Rows %}
+        {{ row.Render }}
+    {% endfor %}
+{% endblock %}

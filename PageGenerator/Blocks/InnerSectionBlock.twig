@@ -1,0 +1,8 @@
+{# @var Model \rnpagebuilder\PageGenerator\Blocks\InnerSectionBlock #}
+
+{% extends "PageGenerator/Blocks/Core/BlockBase.twig" %}
+{% block content %}
+    {% for row in Model.Rows %}
+        {{ row.Render }}
+    {% endfor %}
+{% endblock %}

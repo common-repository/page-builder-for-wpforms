@@ -1,0 +1,5 @@
+.rendererNumber input {
+  width: 100%; }
+
+.rendererNumber input:read-only {
+  background-color: #fcfcfc !important; }

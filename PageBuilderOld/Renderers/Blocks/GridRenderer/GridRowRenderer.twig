@@ -1,0 +1,10 @@
+{# @var Model \rnpagebuilder\PageBuilder\Renderers\Blocks\GridRenderer\GridRowRenderer #}
+
+
+<tr>
+    {% for CurrentCell in Model.Cells %}
+        <td>
+            {{ CurrentCell.Render() }}
+        </td>
+    {% endfor %}
+</tr>

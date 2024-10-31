@@ -1,0 +1,9 @@
+{# @var Model \rnpagebuilder\PageBuilder\Renderers\Blocks\SearchBarRenderer\SearchFieldTemplates\SearchUserTemplate #}
+
+
+<select style="width: 100%" disabled="disabled" data-search-field-id="{{ Model.Field.Options.Id }}">
+    <option></option>
+    {% for CurrentOption in Model.GetLabels() %}
+        <option selected value="{{ CurrentOption.Id }}">{{ CurrentOption.Label }}</option>
+    {% endfor %}
+</select>

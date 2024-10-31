@@ -1,0 +1,12 @@
+.rnprevious,.rnnext{
+    transition: color 200ms ease-in-out;
+}
+
+.rnprevious:hover,.rnnext:hover{
+    color:red;
+}
+
+.rnprevious.rndisabled,.rnnext.rndisabled{
+    color:#999;
+    pointer-events: none;
+}

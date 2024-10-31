@@ -1,0 +1,16 @@
+{# @var Model \rnpagebuilder\PageGenerator\Sections\GridSection\Columns\FieldColumn #}
+{{ AddStyle('fieldcolumn','PageGenerator/Sections/GridSection/Columns/FieldColumn.css') }}
+<div style="display: block;align-items: center;flex-wrap: wrap">
+    {{ Model.Options.Header }}
+    {% if Model.Options.IsSortable %}
+        <span class="rnstack" style="position: relative;height: 16px;width:16px;display: inline-flex;align-items: center;justify-content: center;margin-left: 5px">
+            {% if Model.GetSortDirection=='None' or Model.GetSortDirection=='Up' %}
+                <a href="{{ Model.GetSortURL(true) }}" class="rncaretup" style="position: absolute;top:0;display: flex;height: 6px;line-height: 6px;font-size: 6px;color:{{ Model.GetCaretColor(true) }}">{{ ParseIcon({Source:'solid',Value:'caret-up'}) }}</a>
+            {% endif %}
+            {% if Model.GetSortDirection=='None' or Model.GetSortDirection=='Down' %}
+                <a class="rncaretdown" href="{{ Model.GetSortURL(false) }}" style="position:absolute;bottom: 0;height: 6px;line-height: 6px;font-size: 6px;color:{{ Model.GetCaretColor(false) }}" >{{ ParseIcon({Source:'solid',Value:'caret-down'}) }}</a>
+            {% endif %}
+        </span>
+    {% endif %}
+
+</div>

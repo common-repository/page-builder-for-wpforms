@@ -1,0 +1,9 @@
+.rncaretup,.rncaretdown{
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+
+.rncaretup:hover,.rncaretdown:hover{
+    color:red !important;
+}
+

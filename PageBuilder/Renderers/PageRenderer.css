@@ -1,0 +1,16 @@
+.rnRow{
+    margin-bottom: 15px;
+}
+
+.renderedPage p{
+    margin:0;
+}
+
+.rnBlockLabel{
+    margin-bottom: 3px;
+    display: block;
+}
+
+.rnBlockLabel{
+    font-weight: bold;
+}

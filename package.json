@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "flatpickr": "^4.6.13",
+    "style-mod": "^4.0.0"
+  }
+}

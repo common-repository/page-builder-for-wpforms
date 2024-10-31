@@ -1,0 +1,12 @@
+{# @var FieldSettings \rnpagebuilder\core\Integration\Processors\Settings\Forms\Fields\MultipleOptionsFieldSettings #}
+{{AddStyle('Checkbox','Styles/Checkbox.css') }}
+<div class="inputContainer renderer{{ FieldSettings.RendererType }}" >
+    <ul class="rncheckbox">
+        {% for item in FieldSettings.Items %}
+            <li>
+                <input disabled type="checkbox" {{ FieldSettings.IsOptionSelected(item,Value)?"checked":""  }} />
+                <label>{{ item.Label }}</label>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,17 @@
+{# @var Model \rnpagebuilder\PageBuilder\Renderers\Blocks\NavigatorRenderer #}
+
+
+{{ AddStyle('composed', 'PageBuilder/Renderers/Blocks/NavigatorRenderer.css') }}
+
+<div style="display: flex;justify-content: space-between;align-items: center;">
+    <a href="#" onclick="{{ Model.PreviousIndex==0?'':ParseSubmitActionJavascript('index',Model.PreviousIndex) }}"  class="rnprevious {{ Model.PreviousIndex==0?'rndisabled':'' }}" style="cursor:pointer;height: 30px">{{ ParseIcon('caret-left',{style:{height:'30px',cursor:'pointer'}}) }}</a>
+
+    <div class={'rnNavigationText'}>
+        {{ Model.GetLabel() }}
+    </div>
+
+
+
+
+    <a href="#" class="rnnext {{ Model.NextIndex==-1?'rndisabled':'' }}" onclick="{{ Model.NextIndex==-1?'':ParseSubmitActionJavascript('index',Model.NextIndex) }}" style="cursor:pointer;height: 30px" style="cursor:pointer;height: 30px">{{ ParseIcon('caret-right',{style:{height:'30px',cursor:'pointer'}}) }}</a>
+</div>

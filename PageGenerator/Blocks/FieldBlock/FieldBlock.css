@@ -1,0 +1,10 @@
+.fieldLabel{
+    margin-bottom: 3px;
+    width: 100%;
+    font-weight: bold;
+    display: block;
+}
+
+.PageGenerator  .fieldValue{
+    margin:0;
+}

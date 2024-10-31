@@ -1,0 +1,3 @@
+table.pageGrid.WithBorders td,table.pageGrid.WithBorders th{
+    border:1px solid #ccc;
+}

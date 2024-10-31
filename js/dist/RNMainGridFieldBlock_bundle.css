@@ -1,0 +1,9 @@
+.rnblock.Grid td, .rnblock.Grid th {
+  border: 1px solid #888;
+  padding: 12px; }
+
+.rnblock.Grid table {
+  border-collapse: collapse; }
+
+.gridSlateContainer p {
+  margin: 1px; }

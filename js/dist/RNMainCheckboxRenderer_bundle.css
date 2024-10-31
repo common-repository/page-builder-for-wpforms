@@ -1,0 +1,14 @@
+.rendererCheckbox li {
+  margin-bottom: 10px;
+  list-style: none; }
+
+.rendererCheckbox ul {
+  margin: 0;
+  padding: 0; }
+
+.rendererCheckbox li label {
+  margin: 0 0 0 4px;
+  padding: 0; }
+
+.rendererCheckbox.readonly input {
+  background-color: #fcfcfc !important; }

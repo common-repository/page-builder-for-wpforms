@@ -1,0 +1,9 @@
+{# @var FieldSettings \rnpagebuilder\core\Integration\Processors\Settings\Forms\Fields\MultipleOptionsFieldSettings #}
+<div class="inputContainer renderer{{ FieldSettings.RendererType }}" >
+    <select style="width:100%;" disabled="true" value="{{ FieldSettings.ParseStringValue(Value) }}">
+        {% for item in FieldSettings.Items %}
+            <option {{ FieldSettings.IsOptionSelected(item,Value)?"selected":""  }} value="{{ item.Value }}">{{ item.Label }}</option>
+        {% endfor %}
+
+    </select>
+</div>

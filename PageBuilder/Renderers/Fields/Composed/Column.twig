@@ -1,0 +1,7 @@
+{# @var Column \rnpagebuilder\core\Integration\Processors\Settings\Forms\Fields\ComposedFieldItem #}
+
+
+<div style="width:{{ Column.CalculateWidth() }};" class="ComposedColumn">
+    <input autoComplete='off' readonly  type='text' style="width:100%" value="{{ Column.ParseStringValue(Value) }}"/>
+
+</div>

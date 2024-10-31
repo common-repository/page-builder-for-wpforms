@@ -1,0 +1,15 @@
+{% extends "PageGenerator/Blocks/Core/BlockBase.twig" %}
+{# @var Model \rnpagebuilder\PageGenerator\Blocks\FieldSummary\FieldSummary #}
+
+{% block content %}
+    {{ AddStyle('fieldSummary', 'PageGenerator/Blocks/FieldSummary/FieldSummary.css') }}
+
+    <div>
+        {% for currentRow in Model.Rows  %}
+            <div class="summaryRow">
+                <label class="summaryLabel"> {{ currentRow.Label }}</label>
+                <div class="summaryValue">{{ currentRow.Value }}</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

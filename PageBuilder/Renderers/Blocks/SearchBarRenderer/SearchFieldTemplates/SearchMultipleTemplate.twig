@@ -1,0 +1,9 @@
+{# @var Model \rnpagebuilder\PageBuilder\Renderers\Blocks\SearchBarRenderer\SearchFieldTemplates\SearchMultipleTemplate #}
+
+
+<select style="width: 100%" data-search-field-id="{{ Model.Field.Options.Id }}">
+    <option></option>
+    {% for CurrentOption in Model.FormField.Items %}
+        <option {{ ParseSelected(Model.IsOptionSelected(CurrentOption.Label))}} value="{{ CurrentOption.Label }}">{{ CurrentOption.Label }}</option>
+    {% endfor %}
+</select>

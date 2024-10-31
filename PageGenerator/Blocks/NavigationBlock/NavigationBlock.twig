@@ -1,0 +1,31 @@
+{% extends "PageGenerator/Blocks/Core/BlockBase.twig" %}
+{# @var Model \rnpagebuilder\PageGenerator\Blocks\NavigationBlock\NavigationBlock #}
+{% block content %}
+    {{ AddStyle('navigator','PageGenerator/Blocks/NavigationBlock/NavigationBlock.css') }}
+    <div>
+        {% if not Model.GetIsFirstPage %}
+            <a class="navigationItem" href="{{ Model.GetPageGenerator.GetPageLink(0) }}" href="#">{{ "<<" |escape }}</a>
+            <a class="navigationItem" href="{{ Model.GetPageGenerator.GetPageLink(Model.GetCurrentPage-1) }}" href="#">{{ "<" |escape}}</a>
+        {% endif %}
+
+        {% if Model.GetTotalNumberOfPages==0 %}
+            <span></span>
+        {% else %}
+
+            {% for item in 0..Model.GetTotalNumberOfPages-1 %}
+                {% if item== Model.GetCurrentPage %}
+                    <span class="navigationItem">{{ item+1 }}</span>
+                {% else %}
+                    <a class="navigationItem" href="{{ Model.GetPageGenerator.GetPageLink(item) }}"  href="#">{{ item+1 }}</a>
+                {% endif %}
+
+            {% endfor %}
+
+
+            {% if not Model.GetIsLastPage %}
+                <a class="navigationItem" href="{{ Model.GetPageGenerator.GetPageLink(Model.GetCurrentPage+1) }}" href="#">{{ ">"|escape }}</a>
+                <a class="navigationItem" href="{{ Model.GetPageGenerator.GetPageLink(Model.GetTotalNumberOfPages-1) }}" href="#">{{ ">>"|escape }}</a>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}

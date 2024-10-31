@@ -1,0 +1,12 @@
+{# @var FieldSettings \rnpagebuilder\core\Integration\Processors\Settings\Forms\Fields\MultipleOptionsFieldSettings #}
+{{AddStyle('Radio','Styles/Radio.css') }}
+<div class="inputContainer renderer{{ FieldSettings.RendererType }}" >
+    <ul class="rnradio">
+        {% for item in FieldSettings.Items %}
+            <li>
+                <input disabled type="radio" {{ FieldSettings.IsOptionSelected(item,Value)?"checked":""  }} />
+                <label>{{ item.Label }}</label>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

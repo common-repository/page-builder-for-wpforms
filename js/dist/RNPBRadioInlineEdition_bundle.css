@@ -1,0 +1,12 @@
+.optionitem:not(:first-child){
+    margin-top: 5px;
+}
+
+.optionitem label{
+    margin-left: 3px;
+}
+
+.optionitem{
+    display: flex;
+    align-items: center;
+}

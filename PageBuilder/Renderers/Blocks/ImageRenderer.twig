@@ -1,0 +1,5 @@
+{# @var Model \rnpagebuilder\PageBuilder\Renderers\Blocks\ImageRenderer #}
+
+{% if Model.GetImageURL()!='' %}
+    <img src="{{ Model.GetImageURL }}"/>
+{% endif %}

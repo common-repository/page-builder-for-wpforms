@@ -1,0 +1,13 @@
+{% extends "PageGenerator/Blocks/Core/BlockBase.twig" %}
+{# @var Model \rnpagebuilder\PageGenerator\Blocks\FieldBlock\FieldBlock #}
+
+{% block content %}
+    {{ AddStyle('fieldBlock', 'PageGenerator/Blocks/FieldBlock/FieldBlock.css') }}
+
+    {% if Model.Options.Label!='' %}
+        <label class="fieldLabel"><strong>{{ Model.Options.Label }}</strong></label>
+    {% endif %}
+    <div class="fieldValue">
+        {{ Model.GetValue }}
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+.rendererComposed .itemLabel {
+  font-style: italic;
+  font-size: 13px; }
+
+.rendererComposed .composedRow {
+  display: flex;
+  margin-bottom: 3px;
+  justify-content: space-between; }
+
+.rendererComposed.readonly input {
+  background-color: #fcfcfc !important; }

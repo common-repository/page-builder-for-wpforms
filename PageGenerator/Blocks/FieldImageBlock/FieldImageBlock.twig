@@ -1,0 +1,18 @@
+{% extends "PageGenerator/Blocks/Core/BlockBase.twig" %}
+{# @var Model \rnpagebuilder\PageGenerator\Blocks\FieldImageBlock\FieldImageBlock #}
+
+{% block content %}
+    {% set image= Model.GetImageURL %}
+    {{ AddStyle('fieldImageBlock', 'PageGenerator/Blocks/FieldImageBlock/FieldImageBlock.css') }}
+
+    {% if image != '' %}
+        <div class="imageContainer">
+            {% if Model.IsClickable %}
+                {{ Model.ClickActionRenderer.Render() }}
+            {% else %}
+                <img src="{{ image }}"/>
+            {% endif %}
+        </div>
+
+    {% endif %}
+{% endblock %}

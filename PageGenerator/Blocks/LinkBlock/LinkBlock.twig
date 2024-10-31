@@ -1,0 +1,12 @@
+{% extends "PageGenerator/Blocks/Core/BlockBase.twig" %}
+{# @var Model \rnpagebuilder\PageGenerator\Blocks\LinkBlock\LinkBlock #}
+
+{% block content %}
+    {{ AddStyle('LinkBlock', 'PageGenerator/Blocks/LinkBlock/LinkBlock.css') }}
+
+    {% if Model.Options.Style=='Link' %}
+        <a style="display: inline-flex;align-items: center" href="{{ Model.URL }}">{{ ParseIcon(Model.Options.Icon) }}{{ Model.Text }}</a>
+        {% else %}
+            <a class="linkButton" href="{{ Model.URL }}">{{ ParseIcon(Model.Options.Icon) }}{{ Model.Text }}</a>
+    {% endif %}
+{% endblock %}

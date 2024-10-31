@@ -1,0 +1,13 @@
+{# @var Model \rnpagebuilder\PageGenerator\Blocks\Core\Row #}
+{{ AddStyle('Row','PageGenerator/Blocks/Core/Row.css') }}
+    {%if Model.Options.Styles!='' %}
+        <style>
+            {{ Model.Options.Styles }}
+        </style>
+    {% endif %}
+    <div class="rnRow Row_{{ Model.Options.Id }} {{ Model.Options.Class }}">
+        {% for column in Model.Columns %}
+            {{ column.Render }}
+        {% endfor %}
+    </div>
+

@@ -1,0 +1,3 @@
+.inline-edit[data-type="Text"]:not(.editing){
+    border-bottom: dashed 1px #0088cc
+}

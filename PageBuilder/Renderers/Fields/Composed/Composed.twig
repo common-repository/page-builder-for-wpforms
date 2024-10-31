@@ -1,0 +1,8 @@
+{# @var FieldSettings \rnpagebuilder\core\Integration\Processors\Settings\Forms\Fields\ComposedFieldSettings #}
+{{ AddStyle('composedf', 'PageBuilder/Renderers/Fields/Composed/Composed.css') }}
+
+<div class="inputContainer renderer{{ FieldSettings.RendererType }}" >
+    {% for currentRow in FieldSettings.Rows %}
+        {%  include '/Fields/Composed/Rows.twig' with {'Row':currentRow,'Value':Value} %}
+    {% endfor %}
+</div>

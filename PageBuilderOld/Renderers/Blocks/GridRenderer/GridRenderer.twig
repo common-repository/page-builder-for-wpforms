@@ -1,0 +1,56 @@
+{# @var Model \rnpagebuilder\PageBuilder\Renderers\Blocks\GridRenderer\GridRenderer #}
+
+{% macro Header(model,column) %}
+    {% if column.ContentType=='field' and column.IsSortable %}
+        {{ model.CreateSortableHeader(column) }}
+    {% else %}
+        {{ column.Header }}
+    {% endif %}
+
+{% endmacro %}
+
+
+{{ AddStyle('gridrenderer', 'PageBuilder/Renderers/Blocks/GridRenderer/GridRenderer.css') }}
+<div>
+    <table class="pbGrid pbGrid-striped" style="width:100%;table-layout: fixed;">
+        <thead>
+            <tr>
+                {% for column in Model.Options.Columns %}
+                    <th>{{ _self.Header(Model,column) }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for CurrentRow in Model.Rows  %}
+                {{ CurrentRow.Render() }}
+            {% endfor %}
+        </tbody>
+
+    </table>
+    {% if Model.Options.EnablePagination %}
+        <div>
+            <div style="display: flex; align-items: center; justify-content: flex-end;border-left: 1px solid;border-bottom: 1px solid;border-right: 1px solid;padding:5px;">
+                <span>Show:</span>
+                <select class="rnPageSize"  style="width:auto;padding: 0px; border: none; background-color: transparent; margin-right: 20px;" onchange="{{ ParseSubmitActionJavascript('size','event.target.value')}}">
+                    {% for pagesize in Model.Options.PaginationOptions %}
+                        <option {{ ParseSelected(Model.GetPageRenderer().GetPageSize()==pagesize)}} value="{{ pagesize }}">{{ pagesize }}</option>
+                    {% endfor %}
+                </select>
+                <input  onchange="{{ ParseSubmitActionJavascript('index','event.target.value')}}" type="number" class="rnCurrentPage"  value="{{ Model.getCurrentPage() }}" style="display: inline-block; min-width: 20px;max-width: 50px; text-align: right; background-color: transparent; border: none; padding: 0px 2px;"><span style="margin-right: 20px;">of {{ Model.GetTotalNumberOfPages() }}</span>
+
+                <a href="#" onclick="{{ Model.GetPreviousIndex==-1?'':ParseSubmitActionJavascript('index',Model.GetPreviousIndex) }}">
+                    <svg class="rnPrevious {{ Model.GetPreviousIndex==-1?"rnDisabled":'' }}" fill="currentColor" viewBox="0 0 320 512" style="height: 1em; font-size: 15px; margin-right: 10px;">
+                        <path d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path>
+                    </svg>
+                </a>
+
+                <a href="#" onclick="{{ Model.GetNextIndex==-1?'':ParseSubmitActionJavascript('index',Model.GetNextIndex) }}">
+                    <svg class="rnNext {{ Model.GetCurrentPage()==Model.GetTotalNumberOfPages()?"rnDisabled":'' }}" fill="currentColor" viewBox="0 0 320 512" style="height: 1em; font-size: 15px;">
+                        <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    {% endif %}
+
+</div>

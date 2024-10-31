@@ -1,0 +1,5 @@
+.rendererSelect select {
+  width: 100%; }
+
+.rendererSelect.readonly select {
+  background-color: #fcfcfc !important; }

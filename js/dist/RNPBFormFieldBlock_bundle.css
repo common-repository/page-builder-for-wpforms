@@ -1,0 +1,9 @@
+.FormField .positionLeft{
+    display:flex;
+    justify-content:space-between;
+}
+
+.FormField .positionLeft p{
+    padding:0;
+    margin:0;
+}

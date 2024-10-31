@@ -1,0 +1,42 @@
+HasPr: true
+URL: https://pagebuilder.rednao.com/
+Plugins:
+  - Name: PageBuilderWPForm
+    SVN:  https://plugins.svn.wordpress.org/page-builder-for-wpforms
+    Prefix: rnpagebuilder
+    Main: PageBuilderForWPForm.php
+    Title: Page Builder for WPForms
+    Zip: PageBuilderForWPFormPro.zip
+    GroupName: PageBuilderForWPForms
+    CYPRESS:
+      ENVIRONMENT:
+        LISTPAGEID: rnpagebuilder
+
+
+PACKAGE:
+  IGNORE:
+    - design
+    - js/node_modules
+    - '!js/dist'
+    - '!js/lib'
+    - 'js/dist/*.js.map'
+    - composer.json
+    - composer.lock
+    - package-lock.json
+    - phpunit.phar
+    - phpunit.xml.dist
+  PUBLIC_IGNORE:
+    - pr
+CYPRESS:
+  ENVIRONMENT:
+    ROOTENV: TEST
+TEST:
+  COMMANDS:
+    - Action: sql
+      src: Resources/General/Records.sql
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+{# @var Model \rnpagebuilder\PageBuilder\Renderers\Blocks\ListRenderer\ListItemRenderer #}
+<div class="listItem">
+    {% for currentItem in Model.Rows %}
+        {{ currentItem.Render }}
+    {% endfor %}
+</div>

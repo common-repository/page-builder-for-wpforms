@@ -1,0 +1,3 @@
+table.pageGrid.WithBorders tr:nth-child(even){
+    background-color:#eaeaea;
+}

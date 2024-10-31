@@ -1,0 +1,17 @@
+{# @var Model \rnpagebuilder\PageGenerator\Core\Area\PageAreaBase #}
+
+<div class="Area {{ Model.Options.Id }}">
+    <style>
+        {{ Model.Options.Style }}
+
+        @media (max-width: 768px) {
+        {{ Model.Options.StyleMobile }}
+        }
+    </style>
+    <div>
+        {% for section in Model.Sections %}
+            {{ section.BeforeRender }}
+            {{ section.Render }}
+        {% endfor %}
+    </div>
+</div>

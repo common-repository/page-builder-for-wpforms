@@ -1,0 +1,8 @@
+{# @var Row \rnpagebuilder\core\Integration\Processors\Settings\Forms\Fields\ComposedFieldRow #}
+
+
+<div class="ComposedRow">
+    {% for currentColumn in Row.Items %}
+        {%  include '/Fields/Composed/Column.twig' with {'Column':currentColumn,'Value':Value} %}
+    {% endfor %}
+</div>

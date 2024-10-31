@@ -1,0 +1,19 @@
+{# @var Model \rnpagebuilder\PageGenerator\Core\Section\PageSectionPerRow #}
+{{ AddStyle('PageSection','PageGenerator/Core/Section/PageSectionBase.css') }}
+{{AddStyle('PagePerSection','PageGenerator/Core/Section/PageSectionPerRow.css') }}
+
+{% set count = Model.RowCount %}
+{% if count > 0 %}
+    <div class="Section Section_{{ Model.Options.Id }} {{ Model.WidthToUse==''?'':'MultipleColumnsSection' }}">
+        {% for i in 0..count-1  %}
+            <div class="SectionPerRow Row{{ i }}" style="{{ Model.GetItemStyles }}">
+                {% for row in Model.Rows %}
+                    {{ row.Render }}
+                {% endfor %}
+            </div>
+            {{ Model.GoNext }}
+        {% endfor %}
+    </div>
+{% else %}
+    {{ Model.GetEmptyMessage }}
+{% endif %}

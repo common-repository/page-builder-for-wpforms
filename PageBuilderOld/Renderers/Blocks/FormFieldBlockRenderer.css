@@ -1,0 +1,16 @@
+.FormField .positionLeft{
+    display:flex;
+    justify-content:space-between;
+}
+
+
+.FormField .positionTop .rnBlockLabel{
+    padding:0;
+    margin:0;
+    margin-bottom: 3px;
+}
+
+.FormField .positionLeft p{
+    padding:0;
+    margin:0;
+}

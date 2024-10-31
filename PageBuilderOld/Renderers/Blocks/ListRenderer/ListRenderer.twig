@@ -1,0 +1,5 @@
+{# @var Model \rnpagebuilder\PageBuilder\Renderers\Blocks\ListRenderer\ListRenderer #}
+
+{% for currentItem in Model.ListItems %}
+    {{ currentItem.Render() }}
+{% endfor %}

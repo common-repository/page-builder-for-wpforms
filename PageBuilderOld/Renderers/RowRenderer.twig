@@ -1,0 +1,7 @@
+{# @var Model \rnpagebuilder\PageBuilder\Renderers\RowRenderer #}
+
+<div class="rnRow" data-row-id="{{ Model.Options.Id }}">
+    {% for column in Model.Columns %}
+        {{ column.Render() }}
+    {% endfor %}
+</div>

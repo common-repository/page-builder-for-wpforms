@@ -1,0 +1,25 @@
+.pageGrid{
+    width: 100%;
+    border-collapse: collapse;
+    border:1px solid #e0e0e0;
+}
+
+.pageGrid th{
+    padding: 15px;
+    background-color: #f9f9f9;
+    text-align: left;
+    border-style: none;
+    border-width: 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.pageGrid td{
+    border-style: none;
+    border-width: 0;
+    padding: 15px;
+}
+
+.pageGrid p{
+    margin:0;
+    text-align: unset;
+}

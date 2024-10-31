@@ -1,0 +1,90 @@
+{# @var Model \rnpagebuilder\PageBuilder\Renderers\PageRenderer #}
+
+<div class="renderedPage rednao wpforms-validate wpforms-form" data-id="{{ Model.Id }}" >
+    {% if Model.PageGenerator.Options.Page.Style !='' %}
+        <style type="text/css">
+            {{ Model.PageGenerator.Options.Page.Style }}
+        </style>
+    {% endif %}
+    <script type="text/javascript">
+
+
+        function RNSubmitAction(target,actionName,params,skipSubmission=false)
+        {
+            target.preventDefault();
+            form=target.currentTarget;
+            while(form!=null&&(form.tagName!=='DIV'||!form.classList.contains('renderedPage')))
+            {
+                form=form.parentNode;
+            }
+
+            if(form!=null)
+                form=form.querySelector('.renderedPageForm');
+
+
+            if(form==null)
+                return;
+
+            var action=form.action;
+            if(action.indexOf('?')>=0)
+                action=action.substr(action.indexOf('?')+1);
+
+            var actionList=action.split('&');
+            var newActions='';
+            var parameterFound=false;
+            for(var i=0;i<actionList.length;i++)
+            {
+                let values=actionList[i].split('=');
+                if(values.length!=2)
+                    continue;
+                if(values[0]===actionName)
+                {
+                    values[1] = encodeURI(params);
+                    parameterFound=true;
+                }
+
+                if(newActions=='')
+                    newActions='?';
+                else
+                    newActions+='&';
+                newActions+=values[0]+'='+values[1];
+            }
+
+            if(!parameterFound)
+            {
+                if(newActions.length==0)
+                    newActions='?'
+                else
+                    newActions=newActions+'&';
+
+                newActions+=encodeURI(actionName)+'='+encodeURI(params);
+
+            }
+
+
+
+
+            form.action=newActions;
+            if(actionName=='size')
+            {
+                RNSubmitAction(target, 'index', 1);
+                return;
+            }
+            if(!skipSubmission)
+                form.submit();
+        }
+    </script>
+
+    {% for row in Model.Rows %}
+        {{ row.Render() }}
+    {% endfor %}
+
+
+    <input type="hidden" name="data" class="rnData"/>
+    <form data-id="{{ Model.Id }}" class="renderedPageForm" method="post">
+        {% for currentPostItem in Model.PageGenerator.PostItems %}
+            <input type="hidden" name="PostItems[{{ currentPostItem.Name }}]" value="{{ currentPostItem.Serialize }}"/>
+
+        {% endfor %}
+    </form>
+</div>

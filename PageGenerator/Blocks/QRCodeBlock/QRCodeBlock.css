@@ -1,0 +1,16 @@
+.linkButton{
+    background-color: #007bff;
+    border:1px solid #007bff;
+    cursor: pointer;
+    color:white;
+    padding: 8px 10px;
+    border-radius: 3px;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+
+}
+
+.linkButton:hover, .linkButton:focus{
+    color: white;
+}

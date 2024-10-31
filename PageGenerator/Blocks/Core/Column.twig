@@ -1,0 +1,7 @@
+{# @var Model \rnpagebuilder\PageGenerator\Blocks\Core\Column #}
+{{ AddStyle('PageColumn','PageGenerator/Blocks/Core/Column.css') }}
+<div class="rnColumn Column_{{ Model.Options.Id }}" style="width: {{ Model.Options.WidthPercentage }}%">
+    {% for block in Model.Blocks %}
+        {{ block.Render }}
+    {% endfor %}
+</div>

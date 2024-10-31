@@ -1,0 +1,31 @@
+{# @var Model \rnpagebuilder\PageGenerator\Sections\GridSection\GridSection #}
+{{ AddStyle('GridSection','PageGenerator/Sections/GridSection/GridSection.css') }}
+
+<div style="padding: 10px;overflow: auto;">
+    <table class="pageGrid Section_GridSection {{ Model.Options.GridStyle }} {{ Model.Options.Stripped?'rnStripped':'' }}">
+        <thead>
+            <tr>
+                {% for Column in Model.Columns %}
+                    <th class="th_{{ Column.Options.ColumnId }}" style="width: {{ Model.GetWidth(Column) }}">
+                        {{ Column.GetHeader }}
+                    </th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% set count = Model.RowCount %}
+            {% if count > 0 %}
+                {% for i in 0..count-1  %}
+                    <tr class="Row{{ i }}">
+                        {% for Column in Model.Columns %}
+                            <td class="td_{{ Column.Options.ColumnId }}" style="width: {{ Model.GetWidth(Column) }}">
+                                {{ Column.Render }}
+                            </td>
+                        {% endfor %}
+                    </tr>
+                    {{ Model.GoNext }}
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+</div>

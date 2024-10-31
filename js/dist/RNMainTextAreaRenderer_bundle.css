@@ -1,0 +1,7 @@
+.rendererTextArea textarea {
+  width: 100%;
+  height: 110px;
+  border-color: #ced4da; }
+
+.rendererTextArea textarea:read-only {
+  background-color: #fcfcfc !important; }

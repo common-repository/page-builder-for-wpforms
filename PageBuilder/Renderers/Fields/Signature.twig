@@ -1,0 +1,8 @@
+{# @var FieldSettings \rnpagebuilder\core\Integration\Processors\Settings\Forms\Fields\SignatureFieldSettings #}
+<div class="inputContainer renderer{{ FieldSettings.RendererType }}" >
+    {% if FieldSettings.GetURL(Value) !='' %}
+        <img src="{{ FieldSettings.GetURL(Value) }}">
+    {% endif %}
+</div>
+
+
